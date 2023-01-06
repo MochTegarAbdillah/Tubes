@@ -38,7 +38,7 @@ public class UI {
             titleNamePanel.setBounds(100, 100, 600, 500);
             titleNamePanel.setBackground(Color.BLACK);
             
-            titleNameLabel = new JLabel("PERJALANAN SI GUNDUL");
+            titleNameLabel = new JLabel("PERJALANAN SI OJEK ONLINE");
             titleNameLabel.setForeground(Color.WHITE);
             titleNameLabel.setFont(titleFont);
             titleNamePanel.add(titleNameLabel);
@@ -65,7 +65,7 @@ public class UI {
             mainTextPanel.setBackground(Color.BLACK);
             window.add(mainTextPanel);
 
-            mainTextArea = new JTextArea("P goblok");
+            mainTextArea = new JTextArea("");
             mainTextArea.setBounds(100, 100, 600, 250);
             mainTextArea.setBackground(Color.BLACK);
             mainTextArea.setForeground(Color.WHITE);
