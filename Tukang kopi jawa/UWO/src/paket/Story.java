@@ -4,6 +4,7 @@ import paket2.Monster_gob;
 import paket2.Weapon_Golok;
 import paket2.Weapon_GolokSuper;
 import paket2.superMonster;
+import paket2.Bos_monster;
 
 public class Story {
 
@@ -141,7 +142,14 @@ public class Story {
     }
     public void Kaler(){
 
-        monster = new Monster_gob();
+        int i = new java.util.Random().nextInt(200);
+
+        if(i < 95) {
+            monster = new Monster_gob();
+        }
+        else {
+            monster = new Bos_monster();
+        }
 
         ui.mainTextArea.setText("Kamu bertemu dengan " + monster.name + "!");
         ui.choice1.setText("Gelud");
@@ -156,7 +164,7 @@ public class Story {
     }
     public void fight() {
         
-        ui.mainTextArea.setText(monster.name + ": " + monster.hp + "\n\nWhat mau apa kamu?");
+        ui.mainTextArea.setText(monster.name + ": " + monster.hp + "\n\nDeuk naon kamu?");
         ui.choice1.setText("Gelud");
         ui.choice2.setText("Lumpat");
         ui.choice3.setText(" ");
@@ -171,7 +179,7 @@ public class Story {
 
         int playerDamage = new java.util.Random().nextInt(player.curwWeapon.damage);
 
-        ui.mainTextArea.setText("Kamu menyerang "  + monster.name + "dan mendapatkan " + playerDamage + "damage!");
+        ui.mainTextArea.setText("Kamu menyerang "  + monster.name + " dan mendapatkan " + playerDamage + " damage!");
 
         monster.hp = monster.hp - playerDamage;
 
@@ -220,7 +228,7 @@ public class Story {
     }
     public void Win() {
 
-        ui.mainTextArea.setText("Kamu mengalahkan " + monster.name + "!\n The mamak menjatuhkan cincin emas pasar baru!\n\n(Kamu mendapatkan cincin dari pasar baru!");
+        ui.mainTextArea.setText("Kamu mengalahkan " + monster.name + "!\n Si copet Ubed menjatuhkan cincin emas pasar baru!\n\n(Kamu mendapatkan cincin dari pasar baru!)");
 
         cincinEmas = 1;
 
@@ -250,12 +258,22 @@ public class Story {
     }
     public void ending() {
 
-        ui.mainTextArea.setText("Driver: wih apaan tuh cincin emas");
+        ui.mainTextArea.setText("Driver: wih apaan tuh cincin emas punya gw \nMakasih banyak ye. udah mau ngambilin \nNah sekarang lu boleh lewat! \n\n<Tamat>");
 
-        ui.choice1.setVisible(false);
+        ui.choice1.setVisible(true);
         ui.choice2.setVisible(false);
         ui.choice3.setVisible(false);
         ui.choice4.setVisible(false);
+
+        ui.choice1.setText("To the Title Screen");
+        ui.choice2.setText(" ");
+        ui.choice3.setText(" ");
+        ui.choice4.setText(" ");
+
+        game.nextPosition1 = "toTitle";
+        game.nextPosition2 = " ";
+        game.nextPosition3 = " ";
+        game.nextPosition4 = " ";
     }
     public void toTitle() {
 
